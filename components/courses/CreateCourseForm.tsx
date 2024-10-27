@@ -59,8 +59,9 @@ const CreateCourseForm = ({ categories }: CreateCourseFormProps) => {
   // 2. Define a submit handler.
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      const response = await axios.post("/api/courses", values);
-      router.push(`/instructor/courses/${response.data.id}/basic`);
+      console.log(values)
+      // const response = await axios.post("/api/courses", values);
+      // router.push(`/instructor/courses/${response.data.id}/basic`);
       toast.success("New Course Created");
     } catch (err) {
       console.log("Failed to create new course", err);

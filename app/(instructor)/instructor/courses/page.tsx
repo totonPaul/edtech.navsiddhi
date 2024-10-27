@@ -14,14 +14,14 @@ const CoursesPage = async () => {
     return redirect("/sign-in");
   }
 
-  const courses = await db.course.findMany({
-    where: {
-      instructorId: userId,
-    },
-    orderBy: {
-      createdAt: "desc",
-    },
-  });
+  // const courses = await db.course.findMany({
+  //   where: {
+  //     instructorId: userId,
+  //   },
+  //   orderBy: {
+  //     createdAt: "desc",
+  //   },
+  // });
 
   return (
     <div className="px-6 py-4">
@@ -29,9 +29,9 @@ const CoursesPage = async () => {
         <Button>Create New Course</Button>
       </Link>
 
-      <div className="mt-5">
+      {/* <div className="mt-5">
         <DataTable columns={columns} data={courses} />
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -1,40 +1,40 @@
 import { clerkClient } from "@clerk/nextjs/server";
 import Image from "next/image";
 import { redirect } from "next/navigation";
+import courses from "@/resources/courses"
 
-import { db } from "@/lib/db";
+// import { db } from "@/lib/db";
 import ReadText from "@/components/custom/ReadText";
 import SectionMenu from "@/components/layout/SectionMenu";
 
 const CourseOverview = async ({ params }: { params: { courseId: string } }) => {
-  const course = await db.course.findUnique({
-    where: {
-      id: params.courseId,
-      isPublished: true,
-    },
-    include: {
-      sections: {
-        where: {
-          isPublished: true,
-        },
-      },
-    },
-  });
-
+  // const course = await db.course.findUnique({
+  //   where: {
+  //     id: params.courseId,
+  //     isPublished: true,
+  //   },
+  //   include: {
+  //     sections: {
+  //       where: {
+  //         isPublished: true,
+  //       },
+  //     },
+  //   },
+  // });
+  function getCourseById(courseId: string) {
+    return courses.find((courseObj) => courseObj.id === courseId);
+  }
+  const course = getCourseById(params.courseId)
   if (!course) {
     return redirect("/");
   }
 
-  const instructor = await clerkClient.users.getUser(course.instructorId);
+  // const instructor = await clerkClient.users.getUser(course.instructorId);
 
   let level;
 
-  if (course.levelId) {
-    level = await db.level.findUnique({
-      where: {
-        id: course.levelId,
-      },
-    });
+  if (course.level) {
+    level = course.level
   }
 
   return (
@@ -47,7 +47,7 @@ const CourseOverview = async ({ params }: { params: { courseId: string } }) => {
       <p className="font-medium">{course.subtitle}</p>
 
       <div className="flex gap-2 items-center">
-        <Image
+        {/* <Image
           src={
             instructor.imageUrl
               ? instructor.imageUrl
@@ -57,9 +57,9 @@ const CourseOverview = async ({ params }: { params: { courseId: string } }) => {
           width={30}
           height={30}
           className="rounded-full"
-        />
+        /> */}
         <p className="font-bold">Instructor:</p>
-        <p>{instructor.fullName}</p>
+        <p>{course.instructor}</p>
       </div>
 
       <div className="flex gap-2">
@@ -69,7 +69,7 @@ const CourseOverview = async ({ params }: { params: { courseId: string } }) => {
 
       <div className="flex gap-2">
         <p className="font-bold">Level:</p>
-        <p>{level?.name}</p>
+        <p>{level}</p>
       </div>
 
       <div className="flex flex-col gap-2">

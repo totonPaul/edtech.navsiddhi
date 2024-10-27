@@ -3,6 +3,7 @@ import Topbar from "@/components/layout/Topbar";
 import { db } from "@/lib/db";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
+import courses from "@/resources/courses"
 
 const CourseDetailsLayout = async ({
   children,
@@ -17,22 +18,29 @@ const CourseDetailsLayout = async ({
     return redirect("/sign-in");
   }
 
-  const course = await db.course.findUnique({
-    where: {
-      id: params.courseId,
-    },
-    include: {
-      sections: {
-        where: {
-          isPublished: true,
-        },
-        orderBy: {
-          position: "asc",
-        },
-      },
-    },
-  });
+  // const course = await db.course.findUnique({
+  //   where: {
+  //     id: params.courseId,
+  //   },
+  //   include: {
+  //     sections: {
+  //       where: {
+  //         isPublished: true,
+  //       },
+  //       orderBy: {
+  //         position: "asc",
+  //       },
+  //     },
+  //   },
+  // });
 
+  // if (!course) {
+  //   return redirect("/");
+  // }
+  function getCourseById(courseId: string) {
+    return courses.find((courseObj) => courseObj.id === courseId);
+  }
+  const course = getCourseById(params.courseId)
   if (!course) {
     return redirect("/");
   }

@@ -1,15 +1,17 @@
 import CreateCourseForm from "@/components/courses/CreateCourseForm"
 import { db } from "@/lib/db"
+import categories from "@/resources/category"
 
 const CreateCoursePage = async () => {
-  const categories = await db.category.findMany({
-    orderBy: {
-      name: "asc"
-    },
-    include: {
-      subCategories: true
-    }
-  })
+  // const categories = await db.category.findMany({
+  //   orderBy: {
+  //     name: "asc"
+  //   },
+  //   include: {
+  //     subCategories: true
+  //   }
+  // })
+
 
   return (
     <div>

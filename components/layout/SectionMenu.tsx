@@ -1,11 +1,13 @@
-import { Course, Section } from "@prisma/client";
+// import { Course, Section } from "@prisma/client";
+import { CourseType, SectionType } from "@/lib/types";
+
 import React from "react";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import { Button } from "../ui/button";
 import Link from "next/link";
 
 interface SectionMenuProps {
-  course: Course & { sections: Section[] };
+  course: CourseType & { sections: SectionType[] };
 }
 
 const SectionMenu = ({ course }: SectionMenuProps) => {
