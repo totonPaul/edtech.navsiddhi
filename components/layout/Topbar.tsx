@@ -1,115 +1,73 @@
 "use client";
 
+import "@/styles/Topbar.css";
+
 import { UserButton, useAuth } from "@clerk/nextjs";
-import { Menu, Search } from "lucide-react";
+import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 
 const Topbar = () => {
   const { isSignedIn } = useAuth();
   const router = useRouter();
-  const pathName = usePathname();
 
   const topRoutes = [
-    { label: "Instructor", path: "/instructor/courses" },
+    { label: "Edutech Coding classes", path: "/" },
+    { label: "Enroll", path: "/enroll" },
     { label: "Learning", path: "/learning" },
-  ];
-
-  const sidebarRoutes = [
-    { label: "Courses", path: "/instructor/courses" },
-    {
-      label: "Performance",
-      path: "/instructor/performance",
-    },
   ];
 
   const [searchInput, setSearchInput] = useState("");
 
-  const handleSearch = () => {
-    if (searchInput.trim() !== "") {
-      router.push(`/search?query=${searchInput}`);
-    }
-    setSearchInput("");
-  };
-
   return (
-    <div className="flex justify-between items-center p-4">
-      <Link href="/">
-        <Image src="/logo.png" height={100} width={200} alt="logo" />
+    <div className="topbar">
+      <Link href="/" className="topbar-logo">
+        <Image src="/navsiddhiLogo.png" height={60} width={130} alt="logo" />
       </Link>
 
-      <div className="max-md:hidden w-[400px] rounded-full flex">
+      <div className="topbar-routes">
+        {topRoutes.map((route) => (
+          <Link href={route.path} key={route.path}>
+            {route.label}
+          </Link>
+        ))}
+      </div>
+
+      {/* Search Bar */}
+      <div className="search-bar">
         <input
-          className="flex-grow bg-[#FFF8EB] rounded-l-full border-none outline-none text-sm pl-4 py-3"
+          type="text"
           placeholder="Search for courses"
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
         />
-        <button
-          className="bg-[#FDAB04] rounded-r-full border-none outline-none cursor-pointer px-4 py-3 hover:bg-[#FDAB04]/80"
-          disabled={searchInput.trim() === ""}
-          onClick={handleSearch}
-        >
-          <Search className="h-4 w-4" />
+        <button onClick={() => router.push(`/search?query=${searchInput}`)}>
+          Search
         </button>
       </div>
 
-      <div className="flex gap-6 items-center">
-        <div className="max-sm:hidden flex gap-6">
-          {topRoutes.map((route) => (
-            <Link
-              href={route.path}
-              key={route.path}
-              className="text-sm font-medium hover:text-[#FDAB04]"
-            >
-              {route.label}
-            </Link>
-          ))}
-        </div>
-
-        <div className="z-20 sm:hidden">
+      <div className="flex items-center gap-4">
+        {/* Mobile Menu Icon */}
+        <div className="topbar-menu-icon">
           <Sheet>
             <SheetTrigger>
-              <Menu className="w-5 h-5" />
+              <Menu className="topbar-menu-icon" />
             </SheetTrigger>
-            <SheetContent className="flex flex-col gap-4">
-              <div className="flex flex-col gap-4">
-                {topRoutes.map((route) => (
-                  <Link
-                    href={route.path}
-                    key={route.path}
-                    className="text-sm font-medium hover:text-[#FDAB04]"
-                  >
-                    {route.label}
-                  </Link>
-                ))}
-              </div>
-              
-              {pathName.startsWith("/instructor") && (
-                <div className="flex flex-col gap-4">
-                  {sidebarRoutes.map((route) => (
-                    <Link
-                      href={route.path}
-                      key={route.path}
-                      className="text-sm font-medium hover:text-[#FDAB04]"
-                    >
-                      {route.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
+            <SheetContent className="topbar-sheet">
+              {topRoutes.map((route) => (
+                <Link href={route.path} key={route.path}>
+                  {route.label}
+                </Link>
+              ))}
             </SheetContent>
           </Sheet>
         </div>
@@ -117,8 +75,8 @@ const Topbar = () => {
         {isSignedIn ? (
           <UserButton afterSignOutUrl="/sign-in" />
         ) : (
-          <Link href="/sign-in">
-            <Button>Sign In</Button>
+          <Link href="/sign-in" className="topbar-signin-btn">
+            Sign In
           </Link>
         )}
       </div>

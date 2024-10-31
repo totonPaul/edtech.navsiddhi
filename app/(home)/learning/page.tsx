@@ -34,7 +34,7 @@ const LearningPage = async () => {
   return (
     <div className="px-4 py-6 md:mt-5 md:px-10 xl:px-16">
       <h1 className="text-2xl font-bold">
-        Your courses
+        Free courses
       </h1>
       <div className="flex flex-wrap gap-7 mt-7">
         {purchasedCourses.map((purchase) => (

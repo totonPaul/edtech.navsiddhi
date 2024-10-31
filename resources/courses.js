@@ -32,12 +32,12 @@ const courses = [
         categoryId: "1",
         subCategoryId: "1-4",
         level: "Begineer",
-        imageUrl: "/resources/a/a.png",
+        imageUrl: "/resources/a/a.jpg",
         title: "Basic Mathematics for programming",
         subtitle: "Maths for Problem solving",
-        description: "This course is to build problem solving skills for class 9 and 10 students", 
+        description: "This course is to build basic mathematics fundamentals for computer programming.", 
         instructor: "Sudeep Paul",
-        sections: [{id: "a-1", title : "Introduction" }], // list of section ids, each section id constructed as courseId-sectionNumber
+        sections: [{id: "a-1", title : "Probability and Statistics" }], // list of section ids, each section id constructed as courseId-sectionNumber
         price: "Free"
   },
 ];

@@ -1,5 +1,4 @@
 import { db } from "@/lib/db";
-import getCoursesByCategory from "../actions/getCourses";
 import Categories from "@/components/custom/Categories";
 import CourseCard from "@/components/courses/CourseCard";
 import categories from "@/resources/category"
@@ -7,7 +6,7 @@ import courses from "@/resources/courses"
 
 import Hero from "@/components/HomePage/Hero";
 import Features from "@/components/HomePage/Features";
-import Admissions from "@/components/HomePage/Admissions";
+import Admissions2 from "@/components/HomePage/Admissions2";
 import CourseOverview from "@/components/HomePage/CourseOverview";
 import Testimonials from "@/components/HomePage/Testimonials";
 import Partners from "@/components/HomePage/Partners";
@@ -40,9 +39,9 @@ export default async function Home() {
     //   <h2> Hi</h2>
     // </div>
     <div className="home-container">
-      <Hero />
-      <Features />
-      <Admissions />
+      {/* <Hero /> */}
+      {/* <Features /> */}
+      <Admissions2 />
       <CourseOverview />
       {/* <Testimonials /> */}
       {/* <Partners /> */}
