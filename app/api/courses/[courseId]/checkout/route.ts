@@ -70,8 +70,10 @@ export const POST = async (
       payment_method_types: ["card"],
       line_items,
       mode: "payment",
-      success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/courses/${course.id}/overview?success=true`,
-      cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/courses/${course.id}/overview?canceled=true`,
+      success_url: `public/courses/${course.id}/overview?success=true`,
+      cancel_url: `public/courses/${course.id}/overview?canceled=true`,
+      // success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/courses/${course.id}/overview?success=true`,
+      // cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/courses/${course.id}/overview?canceled=true`,
       metadata: {
         courseId: course.id,
         customerId: user.id,

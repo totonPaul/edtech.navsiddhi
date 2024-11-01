@@ -21,7 +21,7 @@ const Topbar = () => {
   const router = useRouter();
 
   const topRoutes = [
-    { label: "Edutech Coding classes", path: "/" },
+    { label: "ClickVidya Home", path: "/" },
     { label: "Enroll", path: "/enroll" },
     { label: "Learning", path: "/learning" },
   ];

@@ -11,10 +11,15 @@ export const POST = async (req: NextRequest) => {
   let event: Stripe.Event;
 
   try {
+    // event = stripe.webhooks.constructEvent(
+    //   rawBody,
+    //   signature,
+    //   process.env.STRIPE_WEBHOOK_SECRET!
+    // );
     event = stripe.webhooks.constructEvent(
       rawBody,
       signature,
-      process.env.STRIPE_WEBHOOK_SECRET!
+      "STRIPE_WEBHOOK_SECRET"
     );
   } catch (err: any) {
     return new NextResponse(`Webhook error: ${err.message}`, { status: 400 });

@@ -1,13 +1,14 @@
 /* Global container and spacing adjustments */
 .home-container {
     /* padding: 0 2rem; */
+    /* background-image: url('/images/hero.jpg'); */
     padding: 0 1rem;
     /* background-color: #f5f7fa; */
   }
   
   /* Hero Section */
   .hero-section {
-    background-image: url('/images/hero2.jpg');
+    background-image: url('/images/hero.jpg');
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -42,7 +43,7 @@
   
   /* Features Section */
   .features-section {
-    background-color: rgb(226, 248, 248);
+    /* background-color: rgb(255, 229, 180); */
     padding: 4rem 2rem;
     text-align: center;
   }
@@ -95,7 +96,7 @@
   /* Admissions Section */
   .admissions-section {
     /* background-image: url('/images/aon.jpg'); */
-    background-color: rgb(226, 248, 248);
+    background-color: rgb(255, 229, 180);
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -140,7 +141,7 @@
   .course-overview-section {
     padding: 4rem 2rem;
     /* background-color: #fff; */
-    background-color: rgb(226, 248, 248);
+    /* background-color: rgb(255, 229, 180); */
     text-align: center;
   }
   .courses-container {

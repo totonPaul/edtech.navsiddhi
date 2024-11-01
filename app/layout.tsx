@@ -8,7 +8,7 @@ import ToasterProvider from "@/components/providers/ToasterProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Navsiddhi Edutech",
+  title: "ClickVidya Powered by Navsiddhi Group!",
   description: "Empowering minds, Shaping future",
 };
 
