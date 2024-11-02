@@ -16,16 +16,17 @@ const Admissions2: React.FC = () => {
     <section className="social-media-section">
       <div className="admissions-content">
         <div className="video-container flex justify-center mb-4">
-          {" "}
-          {/* Added flex classes */}
-          <iframe
-            width="70%" // Set width to 600 pixels
-            height="400" // Height remains the same
-            src="https://www.youtube.com/embed/M080_ftaEfs" // Embed URL with the video ID
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+          <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
+            {" "}
+            {/* 16:9 Aspect Ratio */}
+            <iframe
+              className="absolute top-0 left-0 w-full h-full"
+              src="https://www.youtube.com/embed/M080_ftaEfs"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
         </div>
         <h2 className="section-title">Admissions Now Open</h2>
         <div className="admissions-details">
