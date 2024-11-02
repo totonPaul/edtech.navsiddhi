@@ -41,8 +41,8 @@ export default async function Home() {
     // </div>
     <div className="home-container">
       <Hero />
-      <Features />
       <Admissions />
+      <Features />
       <CourseOverview />
       {/* <Testimonials /> */}
       {/* <Partners /> */}

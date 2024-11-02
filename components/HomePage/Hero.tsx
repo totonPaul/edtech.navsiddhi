@@ -4,8 +4,8 @@ import "@/styles/HomePage.css";
 const Hero: React.FC = () => {
   return (
     <section className="hero-section">
-      <h1 className="hero-title">Welcome to ClickVidya powerd by Navsiddhi Group!</h1>
-      <p className="hero-description">Empowering minds, shaping Future!</p>
+      <h1 className="hero-title">Welcome to ClickVidya Coding Classes, powered by Navsiddhi Group!</h1>
+      {/* <p className="hero-description">Empowering minds, shaping Future!</p> */}
       <a className="hero-button" href="/learning">
             Get Started
       </a>

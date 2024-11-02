@@ -21,7 +21,7 @@ const Topbar = () => {
   const router = useRouter();
 
   const topRoutes = [
-    { label: "ClickVidya Home", path: "/" },
+    { label: "Home", path: "/" },
     { label: "Enroll", path: "/enroll" },
     { label: "Learning", path: "/learning" },
   ];
@@ -31,7 +31,7 @@ const Topbar = () => {
   return (
     <div className="topbar">
       <Link href="/" className="topbar-logo">
-        <Image src="/navsiddhiLogo.png" height={60} width={130} alt="logo" />
+        <Image src="/images/clickvidya_logo_flat_2.png" height={100} width={130} alt="logo" />
       </Link>
 
       <div className="topbar-routes">

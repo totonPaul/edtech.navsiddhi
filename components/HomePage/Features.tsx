@@ -3,7 +3,7 @@ import "@/styles/HomePage.css";
 
 const Features: React.FC = () => {
   const featureList = [
-    "Coding Classes from scratch!",
+    "Coding Classes for any age group!",
     "Practical Computer lab sessions!",
     "Learn from expert IITians!",
     "Offline Live Courses!",
