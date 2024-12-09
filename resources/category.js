@@ -3,13 +3,15 @@ const categories = [
       name: "IT & Software",
       id: "1",
       subCategories: [
-          { name: "Web Development", id: "1-1" },
-          { name: "Data Science", id: "1-2" },
-          { name: "Cybersecurity", id: "1-3" },
-          { name: "Others", id: "1-4" },
+          { name: "Digital Data & Computer Electronics", id: "1-1" },
+          { name: "Computer Science Fundamentals", id: "1-2" },
+          { name: "Basics of Programming", id: "1-3" },
+          { name: "Application Development", id: "1-4" },
+          { name: "Problem Solving", id: "1-5" },
+          { name: "Others", id: "1-6" },
       ],
       courses: [
-        "a",
+        "a", "b", "c", "d", "e", "f", "g", "h"
       ]
     },
     {

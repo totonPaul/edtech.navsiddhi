@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Deep Dive into Computer Electronics - Introduction</title>
+  <title>Android Application Development - Introduction</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -77,14 +77,12 @@
 </head>
 <body>
   <div class="container">
-    <h1>Deep Dive into Computer Electronics - Introduction</h1>
+    <h1>Android Application Development - Introduction</h1>
     
-    <h2>Introduction to components inside your computer</h2>
-    <p><b>CPU</b> is the brain or the Central Processing Unit of your computer. It has components like Control Unit, Arithmetic Logic Unit (ALU) , registers, etc, which does all the brain level processing.</p>
-    <p><b>RAM</b> is Random access memory, a memory blackbox which stores data. CPU can anytime access instructions stored inside RAM. Instructions are nothing but programs or softwares converted into their binary format. </p>
-    <p>Other memory black boxes inside computers which store data are <b>SSD, HDD</b>, etc..</p>
-    <p>For data transfer between different components on motherboard like from RAM to CPU and vice versa, there are wires called <b>data bus</b> which <b>transmits binary data</b> 0 or 1 in form of high (5V) or low (0V) <b>voltage levels.</b></p>
-    
+    <h2>Android Applications over the internet!</h2>
+    <p>Any Android Application has three components - Frontend, Backend and the Database. </p>
+    <p> <b>Frontend</b>   of an android app is the GUI (Graphical user interface) with which you interact on android apps, basically whatever you see when you open an android app is the frontend of the app. The backend refers to the server-side of an application, where the logic, database interactions, and API integrations occur. It handles data processing, storage, and communication between the database and frontend, ensuring the application functions properly. Database is where all the data of the android application gets stored in a structured way.</p>
+    <p>We will use XML and JAVA for building android applications.</p>
     <!-- <div class="video-container">
       <iframe
         src="https://www.youtube.com/watch?v=HZGCoVF3YvM&list=PLiAulSm0XXgvCGe63mrAkda9UQ9478YQv"
@@ -93,19 +91,18 @@
         allowfullscreen
       ></iframe>
     </div> -->
-    <!-- https://www.youtube.com/watch?v=KaOdgkUJLb0&t=4s -->
     <div class="video-container">
       <iframe
-        src="https://www.youtube.com/embed/KaOdgkUJLb0?start=4"
+        src="https://www.youtube.com/embed/A67blc9uNAo?start=4"
         frameborder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
     </div>
-
-    <h2>How a computer's hardware and software work together?</h2>
-    <p>A <b>software </b>(a piece of instruction written in high level languagae) in its binary format, which was initially in HDD, gets loaded into RAM. After this one by one the instructions are fetched by the Control unit and, then control signals are sent to IP/OP device or ALU for processing.</p>
-    <p>To speed up processing, CPU has <b>registers and cache memory</b> to store instructions and data during the runtime.</p>
+    <h2>How does an android application work?</h2>
+    <p> <b>Frontend</b> ( GUI code in XML and logic code in JAVA ) is compiled and uploaded to a platform like Google Playstore, from where end users can download, install and finally run the code on their devices.</p>
+    <p>For an online android application with internet support, its <b>backend code and the database</b>, both are present on a server. At a high level, a server can be understood as a computer where all the resources of the application are hosted. </p>
+    <p>Whenever frontend (code installed on your device) wants to communicate with the backend or the database over the internet, it uses <b>API ( Application programming Interface )</b> to do so.</p>
     <!-- <h2>Learning Objectives</h2>
     <p>By the end of this section, you should be able to:</p>
     <ul>
